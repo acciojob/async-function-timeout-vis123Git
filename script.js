@@ -1,16 +1,10 @@
-let textField =  document.getElementById("text").value;
-let timeOut = parseInt(document.getElementById("delay").value);
-let timeButton = document.getElementById("btn");
-let displayOutput = document.getElementById("output");
 
+document.getElementById("btn").addEventListener("click", displayDelayedMessage);
 
-const displayMessage = async (textField,timeOut)=>{
-	try {
-		setTimeOut(()=>{
-			displayOutput.innerText = textField;
-		},timeOut)
-	} catch (error) {
-		
-	}
+async function displayDelayedMessage() {
+    const text = document.getElementById("text").value;
+    const delay = parseInt(document.getElementById("delay").value) * 1000; 
+    document.getElementById("output").textContent = "Waiting...";
+    await new Promise(resolve => setTimeout(resolve, delay));
+    document.getElementById("output").textContent = text;
 }
-timeButton.addEventListener("click", displayMessage())

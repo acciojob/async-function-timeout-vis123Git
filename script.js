@@ -1,5 +1,5 @@
 document.getElementById("btn").addEventListener("click", displayDelayedMessage);
-document.getElementById("output").textContent = "";
+document.getElementById("output").textContent = "Test - 1";
 
 async function displayDelayedMessage() {
     const text = document.getElementById("text").value;

@@ -1,12 +1,9 @@
-
-
-async function displayDelayedMessage(e) {
-	e.preventDefault()
+async function displayDelayedMessage() {
     const text = document.getElementById("text").value;
-    const delay = parseInt(document.getElementById("delay").value) * 1000;
-
+    const delay = parseInt(document.getElementById("delay").value);
+    
     try {
-        if (text.trim() !== "") {
+        if (text.trim() !== "" && !isNaN(delay)) {
             await new Promise((resolve) => setTimeout(resolve, delay));
             document.getElementById("output").textContent = text;
         }

@@ -1,7 +1,7 @@
-document.getElementById("btn").addEventListener("click", displayDelayedMessage);
-document.getElementById("output").textContent = "";
 
-async function displayDelayedMessage() {
+
+async function displayDelayedMessage(e) {
+	e.preventDefault()
     const text = document.getElementById("text").value;
     const delay = parseInt(document.getElementById("delay").value) * 1000;
 
